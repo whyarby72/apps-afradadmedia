@@ -178,11 +178,19 @@ The publisher has now explicitly supplied:
 
 The earlier child-inclusive/Families-specific hold is superseded by this explicit later decision. The Privacy Policy now states that the app is intended for adults aged 18 and over and is not designed or directed to children.
 
+W2 artifact-bound reconciliation has now closed the following for the current S7 release-mode TEST candidate:
+- exact merged release manifest: PASS;
+- exact release runtime dependency graph: PASS;
+- GMA Next-Gen 1.5.0 / UMP 4.0.0 binding: PASS;
+- current release-mode permission inventory: PASS;
+- Data Safety reconciliation candidate: PREPARED.
+
 Still intentionally unresolved:
 - final effective date;
-- final release-artifact / merged-manifest reconciliation;
-- final Play Data Safety reconciliation;
-- final production AdMob binding/runtime reconciliation.
+- final production AdMob ID binding and rebuild;
+- final signed/Play artifact reconciliation;
+- final Play Data Safety form submission;
+- final production-like AdMob/UMP runtime reconciliation.
 
 ## Responsive / accessibility controls
 
@@ -244,16 +252,44 @@ CSS:
 - reading measure: 72ch
 - mobile single-column fallback: PASS
 
+## W2 artifact-bound privacy reconciliation
+
+Valid Android W2 evidence:
+
+- base product source: `baf63bbc9c793b135796cc70de61013bccd26fca`;
+- final audit workflow head: `4cb86e5393d857e53437a62ad9868c0f0eaf8091`;
+- valid workflow run: `37208707771`;
+- evidence artifact ID: `11305559563`;
+- artifact digest: `sha256:8aa255476a714621657ebb0fd6d9076df08891e25831c7ca83cb17f88db947a6`;
+- release-mode APK SHA-256: `147268aa57bbbd7224782104dcfa96018792a73f3dcaff65ceb61c218e6e2d16`.
+
+The audit proves for the current release-mode TEST candidate:
+
+- release package: `com.afradadmedia.reducephotosize`;
+- GMA Next-Gen `1.5.0`;
+- UMP `4.0.0`;
+- legacy `play-services-ads` / `play-services-ads-lite`: absent;
+- Firebase/custom analytics dependency: absent;
+- mediation dependency: absent;
+- merged-manifest network/advertising permissions are present;
+- broad camera/microphone/location/contacts/photo-library/storage permissions tested are absent;
+- Google sample AdMob App ID remains bound;
+- real production AdMob App ID is not yet bound.
+
+A prior W2 run that accidentally captured the debug manifest in the release evidence slot is rejected for release-manifest claims. The verifier was repaired to bind explicit debug/release manifest directories and assert exact package names.
+
 ## Remaining blockers before publication
 
 `HOLD`:
 
 1. final effective date;
-2. exact merged release-manifest reconciliation;
-3. final Play Data Safety reconciliation;
-4. final production AdMob binding/runtime reconciliation;
-5. final human visual review at representative desktop/mobile viewport sizes;
-6. explicit deployment/publication approval.
+2. real AdMob App ID and Banner ad-unit ID production binding;
+3. banner placement API mismatch resolution;
+4. exact signed/Play release candidate rebuild and artifact reconciliation;
+5. final production-like UMP/ad runtime validation;
+6. final Play Ads declaration and Data Safety form;
+7. final human visual review at representative desktop/mobile viewport sizes;
+8. explicit deployment/publication approval.
 
 ## Claim ceiling
 
