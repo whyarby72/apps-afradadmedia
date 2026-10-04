@@ -1,0 +1,4 @@
+# Bootstrap hardening.
+# Live behavior must be verified on the actual DomaiNesia/cPanel vhost.
+Options -Indexes
+DirectoryIndex index.html

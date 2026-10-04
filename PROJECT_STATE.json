@@ -1,0 +1,52 @@
+{
+  "project": "Apps AfradadMedia",
+  "repository": "whyarby72/apps-afradadmedia",
+  "canonical_domain": "apps.afradadmedia.com",
+  "production_document_root_observed": "/home/afradadm/apps.afradadmedia.com/",
+  "source_of_truth": "GitHub",
+  "stage": "deployment_foundation_verified",
+  "branch": "bootstrap/web-foundation",
+  "verification": {
+    "target_profile": "V2_HOSTED_STATIC",
+    "repository_checks": "PASS",
+    "hosted_environment_checks": "PASS_FOR_DEPLOYMENT_PROBE",
+    "artifact_bound_evidence": "PASS_FOR_COMMIT_099992d84875818cbb246103fa89731ef7c77e73",
+    "working_tree_model": "CLEAN_TRACKED_PLUS_HOSTING_ALLOWLIST",
+    "hosting_allowlist": [
+      ".user.ini",
+      "php.ini",
+      ".well-known/"
+    ]
+  },
+  "deployment": {
+    "configured": true,
+    "provider": "DomaiNesia",
+    "mechanism": "Git Deploy Manager",
+    "mode": "MANUAL",
+    "repository_remote": "git@github-apps-afradadmedia:whyarby72/apps-afradadmedia.git",
+    "deployment_branch": "deploy/production",
+    "authentication": "READ_ONLY_SSH_DEPLOY_KEY",
+    "ssh_alias": "github-apps-afradadmedia",
+    "cpanel_environment_audited": true,
+    "cpanel_yml_present": false,
+    "last_probe_commit": "099992d84875818cbb246103fa89731ef7c77e73",
+    "last_probe_result": "PASS",
+    "production_deploy_authorized": false,
+    "last_probe_authorization_consumed": true
+  },
+  "security": {
+    "git_metadata_publicly_exposed": false,
+    "internal_governance_files_publicly_exposed": false,
+    "hosting_residue_publicly_exposed": false,
+    "last_probe_result": "PASS"
+  },
+  "governance": {
+    "artifact_freeze": false,
+    "publication_authorized": false
+  },
+  "known_unknowns": [
+    "canonical app-ads.txt publisher entry",
+    "product-specific privacy and data-flow truth",
+    "final Apps AfradadMedia hub content and SEO/indexing policy"
+  ]
+}
