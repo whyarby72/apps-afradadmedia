@@ -28,12 +28,21 @@ This closes the earlier child-inclusive/Families-specific hold that was created 
 
 `PRIVACY_IDENTITY_CONTACT_TARGET_AUDIENCE_PASS`
 
+W2 has now completed artifact-bound reconciliation for the current S7 release-mode TEST candidate:
+
+- exact release-mode merged manifest: PASS;
+- exact release runtime dependencies: PASS;
+- GMA Next-Gen 1.5.0 / UMP 4.0.0: PASS;
+- current permission inventory: PASS;
+- Data Safety reconciliation candidate: PREPARED.
+
 Still pending before publication:
 
 - final effective date;
-- exact release-artifact / merged-manifest reconciliation;
-- final Play Data Safety reconciliation;
-- final production AdMob binding/runtime reconciliation;
+- production AdMob App ID and Banner ID binding;
+- exact signed/Play release artifact rebuild and final reconciliation;
+- final production-like AdMob/UMP runtime;
+- final Play Ads declaration and Data Safety form;
 - final rendered human visual review;
 - explicit deployment/publication approval.
 
