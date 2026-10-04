@@ -1,60 +1,100 @@
-# Deployment Integration — HOLD
+# Deployment Integration — VERIFIED FOUNDATION
 
-## Intended production target
+## Production target
 
 - Hostname: `apps.afradadmedia.com`
-- Observed cPanel document root: `/home/afradadm/apps.afradadmedia.com/`
-- Hosting: DomaiNesia/cPanel
+- Document root: `/home/afradadm/apps.afradadmedia.com/`
+- Hosting: DomaiNesia / cPanel
 - GitHub source: `whyarby72/apps-afradadmedia`
+- Deployment branch: `deploy/production`
 
-The hostname/document-root mapping and HTTPS redirect were observed during the hosting setup flow. They must still be revalidated as part of the actual deployment evidence pack.
+## Verified release flow
 
-## Intended release flow
+`Codex / ChatGPT → GitHub → deploy/production → scoped human approval → DomaiNesia Git Deploy → live verification`
 
-`Codex / ChatGPT → GitHub → verification → human release approval → cPanel Git deployment → live verification`
+Production should consume an approved Git state. Manual editing in the document root must not become the normal source-of-truth workflow.
 
-The production server should consume an approved Git state. Manual editing in the production document root should not become the normal source-of-truth workflow.
+## DomaiNesia Git Deploy behavior
 
-## Deliberately not configured yet
+The verified manual deployment path:
 
-A production `.cpanel.yml` is intentionally absent.
+1. initializes/uses a Git repository directly inside the domain document root;
+2. fetches the configured branch shallowly;
+3. checks out `FETCH_HEAD` in detached-HEAD state;
+4. overwrites tracked files with the fetched repository version;
+5. preserves untracked files.
 
-Before creating it, audit the actual cPanel **Git Version Control** environment and capture:
+The first probe deployed exact commit:
 
-- repository clone destination;
-- remote authentication method for the private GitHub repository;
-- available Git/cPanel deployment controls;
-- exact deployment task shell/runtime behavior;
-- executable paths required by any copy/sync task;
-- destination-path restrictions;
-- whether `rsync` is available and its exact path if used;
-- failure/rollback behavior;
-- how deployment logs/evidence are retrieved.
+`099992d84875818cbb246103fa89731ef7c77e73`
 
-Do not assume that a command available on a generic cPanel server exists at the same path here.
-
-## Public artifact boundary
-
-Only intended public output should be copied to:
-
-`/home/afradadm/apps.afradadmedia.com/`
-
-Repository governance, evidence, source notes, and Git metadata should not be exposed as public web content.
-
-The current candidate public payload is the contents of `public/`.
+The detached-HEAD state is expected for this deployment mechanism and is not a defect by itself.
 
 ## Private repository authentication
 
-The exact cPanel↔GitHub authentication path is still HOLD until audited. Prefer a least-privilege read-only mechanism for production pull access.
+Verified least-privilege path:
 
-Never commit:
+- dedicated server-side ED25519 key;
+- GitHub Deploy Key title: `DomaiNesia — apps.afradadmedia.com — Read Only`;
+- GitHub Deploy Key is read-only;
+- SSH alias: `github-apps-afradadmedia`;
+- configured remote: `git@github-apps-afradadmedia:whyarby72/apps-afradadmedia.git`.
 
-- GitHub tokens;
-- private SSH keys;
-- cPanel credentials;
-- service-account credentials;
-- AdMob account secrets.
+No private key, PAT, cPanel password, or credential belongs in this repository.
+
+## Deployment payload boundary
+
+The public deployment branch is `deploy/production`.
+
+The bootstrap probe payload was exactly:
+
+- `.htaccess`;
+- `index.html`;
+- `robots.txt`.
+
+Governance files, evidence records, source notes, and internal project state are not deployment payload.
+
+## Hosting-managed residue
+
+DomaiNesia preserves untracked entries. The verified environment contains:
+
+- `.user.ini`;
+- `php.ini`;
+- `.well-known/` with `acme-challenge`.
+
+These are classified `HOSTING_MANAGED_LIKELY` for the current environment. Their public directory/file access tests returned HTTP 403, and no credential-like material was detected in the inspected PHP directive names.
+
+Use the canonical environment-specific allowlist in:
+
+`deployment/DOMAINESIA_HOSTING_ALLOWLIST.md`
+
+## Verification model
+
+Use:
+
+`CLEAN_TRACKED_PLUS_HOSTING_ALLOWLIST`
+
+Do **not** require a universally empty `git status` on this host.
+
+A deployment is eligible for PASS only when:
+
+- exact deployed commit matches the approved candidate;
+- tracked Git drift is absent;
+- tracked public files match expected payload;
+- all untracked top-level entries are reconciled against the current allowlist;
+- Git metadata is not publicly exposed;
+- internal governance files are not publicly exposed;
+- HTTP/TLS/content checks pass for the declared candidate;
+- unexpected residue or changed allowlist semantics produce HOLD until reviewed.
+
+## CI/CD
+
+`Enable CI/CD` and `.cpanel.yml` are intentionally **not** part of the verified production path.
+
+Manual deployment remains the baseline because it preserves an explicit human release boundary between GitHub state and public production state.
 
 ## Publication boundary
 
-A successful pull/deploy command proves only technical execution. It does not authorize publication and does not prove buyer/compliance correctness.
+A successful fetch/checkout proves technical execution only.
+
+The first probe's one-time publication/deployment approval has been consumed. Future deployments require a new scoped approval for the exact candidate material state.
