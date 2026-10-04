@@ -110,11 +110,9 @@
     <section class="policy-section" id="ads">
       <h2>6. Advertising and Google consent services</h2>
       <p>When advertising is enabled in the app release you are using, the app may use the Google Mobile Ads SDK (AdMob) to display a banner advertisement and Google's User Messaging Platform (UMP) to request or manage consent choices where required.</p>
-      <p>Google's current disclosure for the Mobile Ads SDK states that the SDK can automatically collect and share information including IP address, user product interactions, diagnostic information, and device or account identifiers for advertising, analytics, and fraud-prevention purposes. Google states that this SDK data is encrypted in transit using TLS.</p>
-      <p>This Google SDK processing is separate from the JPEG content handled by the app's local compression workflow. The app code is not designed to intentionally send your selected JPEG bytes or the KB/MB target you enter to Google Mobile Ads.</p>
-      <p>The current audited product candidate does not integrate Firebase Analytics, custom analytics, or ad mediation. Google Mobile Ads may still process interaction or diagnostic information for Google's own documented advertising, analytics, and fraud-prevention purposes.</p>
-      <p>Advertising or consent failures are not intended to block the core photo-compression workflow.</p>
-      <p>For more information about Google's SDK data practices, see Google's <a href="https://developers.google.com/ad-manager/mobile-ads-sdk/android/next-gen/privacy/play-data-disclosure">Mobile Ads data disclosure</a> and <a href="https://policies.google.com/privacy">Privacy Policy</a>.</p>
+      <p>Google advertising and consent services may process device, network, advertising, interaction, diagnostic, or fraud-prevention related information according to Google's current SDK behavior, configuration, consent state, and policies.</p>
+      <p>This third-party processing is separate from the JPEG content handled by the app's local compression workflow. The app code does not intentionally send your selected JPEG bytes or the KB/MB target you enter to Google Mobile Ads.</p>
+      <p>The current product architecture does not use Firebase Analytics, custom analytics, or ad mediation. Advertising or consent failures are not intended to block the core photo-compression workflow.</p>
     </section>
 
     <section class="policy-section">
@@ -125,14 +123,13 @@
 
     <section class="policy-section" id="analytics">
       <h2>8. Analytics</h2>
-      <p>The current product candidate does not use Firebase Analytics or a custom analytics service. Google Mobile Ads is a separate third-party SDK and, according to Google's current disclosure, may process certain interaction and diagnostic data for advertising, analytics, and fraud-prevention purposes. If the app later adds a separate analytics service, this policy and the relevant store disclosures must be updated.</p>
+      <p>The current product architecture does not use Firebase Analytics or a custom analytics service. Google Mobile Ads is a separate third-party advertising SDK and may process information according to Google's own data practices.</p>
     </section>
 
     <section class="policy-section" id="permissions">
       <h2>9. Permissions and system access</h2>
-      <p>The app uses Android system photo/document and media APIs to let you choose, save and share files.</p>
-      <p>An artifact-bound audit of the current ad-enabled release-mode candidate found network and advertising-related permissions contributed by the Google advertising stack, including internet/network-state access and the advertising ID permission. The merged manifest also contains basic phone-state, wake-lock and foreground-service permissions used by included SDK/runtime components.</p>
-      <p>The audited candidate does not declare camera, microphone, precise or approximate location, contacts, broad photo-library access, or broad external-storage read/write permissions. The exact final production release will be checked again after production AdMob binding before this policy is published as final.</p>
+      <p>The app uses Android system photo/document and media APIs to let you choose, save, and share files.</p>
+      <p>SDK dependencies may add permissions or components through Android's merged manifest. This policy therefore does not present a fixed, exhaustive permission list based only on the app's handwritten manifest.</p>
     </section>
 
     <section class="policy-section" id="retention">
@@ -175,7 +172,7 @@
 
   <footer class="site-footer">
     <div class="container footer-row">
-      <div>© Afradad Media · Privacy Policy candidate</div>
+      <div>© Afradad Media · Privacy Policy</div>
       <div class="footer-links">
         <a href="../">Photo Compressor: KB Limit</a>
         <a href="../../">Apps</a>
