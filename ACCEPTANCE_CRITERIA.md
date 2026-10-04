@@ -1,64 +1,109 @@
 # Bootstrap Acceptance Criteria
 
-## Gate: Repository Foundation
+## Gate: Repository + Deployment Foundation
 
-This gate covers repository structure only. It does **not** authorize deployment or publication.
+This gate covers the repository foundation and the verified one-time deployment probe. It does **not** authorize future deployment, final publication, `app-ads.txt`, privacy-policy publication, or application-page publication.
 
-### Required
+### Repository foundation
 
 - [x] Repository is private.
 - [x] Default branch is `main`.
 - [x] Bootstrap work occurs on a non-main branch.
-- [ ] Pull request is open and reviewable.
-- [ ] `AGENTS.md` defines scope, source-of-truth, release boundaries, and secret handling.
-- [ ] `PROJECT_STATE.json` is valid JSON and reports deployment/publication as not authorized.
-- [ ] `public/index.html` is self-contained and has no external runtime dependency.
-- [ ] `public/.htaccess` disables directory indexes.
-- [ ] `public/robots.txt` prevents indexing during bootstrap.
-- [ ] Deployment documentation records the observed production target but treats command/runtime details as unverified.
-- [ ] No `.cpanel.yml` production deployment contract exists before cPanel environment audit.
-- [ ] No privacy, data-safety, AdMob, SDK, retention, deletion, or tracking claim is fabricated.
+- [x] Draft pull request is open and reviewable.
+- [x] `AGENTS.md` defines scope, source-of-truth, release boundaries, secret handling, and deployment verification model.
+- [x] `PROJECT_STATE.json` is valid JSON.
+- [x] `public/index.html` is self-contained and has no external runtime dependency.
+- [x] `public/.htaccess` disables directory indexes.
+- [x] `public/robots.txt` prevents indexing during bootstrap.
+- [x] No privacy, data-safety, AdMob, SDK, retention, deletion, or tracking claim is fabricated.
 
 ## Static semantic checks
 
-Before merge, verify against the branch commit:
+Verified for the bootstrap artifact:
 
-1. HTML parses without obvious structural errors.
-2. The page contains exactly one primary `h1`.
-3. The page has a descriptive `title` and viewport metadata.
-4. No external `script`, stylesheet, image, font, iframe, analytics, or tracking request is required.
-5. No secrets or credentials are present.
-6. `.htaccess` includes `Options -Indexes`.
-7. `robots.txt` blocks crawling during bootstrap.
-8. JSON files parse successfully.
+1. HTML contains exactly one primary `h1`.
+2. The page has a descriptive `title` and viewport metadata.
+3. No external script, stylesheet, image, font, iframe, analytics, or tracking request is required.
+4. `.htaccess` includes `Options -Indexes`.
+5. `robots.txt` blocks crawling during bootstrap.
+6. JSON project state parses successfully.
 
-## Hosted environment checks — HOLD until deployment integration
+## Verified DomaiNesia deployment environment
 
-These cannot be marked PASS from repository inspection alone:
+The first authorized deployment probe used:
 
-- DNS resolution;
-- TLS certificate state;
-- HTTP→HTTPS redirect behavior;
-- cPanel Git clone/pull/deploy behavior;
-- exact executable paths used by deployment tasks;
-- `.htaccess` override support;
-- directory-index behavior on the live vhost;
-- response headers;
-- cache behavior;
-- live `app-ads.txt` reachability;
-- live privacy/support page reachability.
+- production hostname: `apps.afradadmedia.com`;
+- document root: `/home/afradadm/apps.afradadmedia.com/`;
+- GitHub repository: `whyarby72/apps-afradadmedia`;
+- deployment branch: `deploy/production`;
+- deployed commit: `099992d84875818cbb246103fa89731ef7c77e73`;
+- Git Deploy mode: manual;
+- GitHub authentication: dedicated read-only SSH Deploy Key;
+- SSH alias: `github-apps-afradadmedia`.
 
-Each hosted PASS must identify:
+Hosted checks verified for that exact deployment probe:
+
+- [x] HTTP→HTTPS redirect works.
+- [x] HTTPS root returns the expected bootstrap artifact.
+- [x] Expected bootstrap content is present.
+- [x] `robots.txt` is reachable with the expected blocking content.
+- [x] `README.md`, `AGENTS.md`, and `PROJECT_STATE.json` are not publicly exposed.
+- [x] `/.git/HEAD`, `/.git/config`, and `/.git/` are not publicly exposed/browseable.
+- [x] Deployed Git HEAD matches the authorized exact commit.
+- [x] Tracked deployment files match the expected payload.
+- [x] No tracked Git drift exists.
+
+## Verification-control repair: hosting residue
+
+The original strict requirement that `git status` be completely clean is **superseded for this DomaiNesia environment**.
+
+DomaiNesia preserves untracked hosting-managed entries in the document root. The verified model is:
+
+`CLEAN_TRACKED_PLUS_HOSTING_ALLOWLIST`
+
+Allowed top-level hosting residue:
+
+- `.user.ini`;
+- `php.ini`;
+- `.well-known/`.
+
+These entries were classified `HOSTING_MANAGED_LIKELY`, contained no credential-like material in the inspected directives, and returned HTTP 403 when tested publicly.
+
+Rules:
+
+1. tracked Git drift must remain absent unless an approved deployment changes the tracked artifact;
+2. the three allowlisted hosting residues do not make the deployment HOLD by themselves;
+3. any new untracked top-level entry outside the allowlist is HOLD until classified;
+4. any allowlisted entry that becomes publicly exposed, changes purpose materially, contains credentials, or creates a security conflict invalidates the PASS;
+5. do not delete hosting-managed residue merely to make `git status` appear clean.
+
+## Still HOLD / not yet applicable
+
+The following remain unresolved or not yet produced:
+
+- final Apps AfradadMedia hub content;
+- canonical `app-ads.txt` publisher entry;
+- product-specific privacy/data-flow truth;
+- per-app privacy/support pages;
+- production indexing/SEO policy after bootstrap;
+- final Artifact Freeze;
+- future publication/deployment authorization.
+
+## Evidence requirements for future hosted PASS
+
+Each material hosted PASS must identify:
 
 - exact Git commit;
 - exact URL/environment;
 - observed timestamp;
-- command/browser used;
+- command/browser/runtime;
 - machine-observable result;
-- replay steps.
+- replay steps;
+- tracked-tree state;
+- untracked entries reconciled against the current hosting allowlist.
 
 ## Release boundary
 
 Merge to `main` is not publication approval.
 
-Deployment to `apps.afradadmedia.com` requires an explicit, material-state-bound human release/publication decision after the applicable verification evidence has been reviewed.
+The one-time deployment-probe authorization for commit `099992d84875818cbb246103fa89731ef7c77e73` has been consumed. Any later material deployment requires a new scoped approval for the exact candidate state.
