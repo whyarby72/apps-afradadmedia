@@ -166,17 +166,23 @@ The prior generic international-use paragraph was removed from the public candid
 
 International/legal-region requirements remain a final compliance review item rather than being silently invented.
 
-### 6. Release blockers kept visible
+### 6. Privacy identity and target audience closure
 
-The candidate still does not invent:
+The publisher has now explicitly supplied:
 
-- publisher legal identity;
-- privacy contact;
-- support contact;
+- publisher/legal identity: `Afradad Media`;
+- privacy contact: `afradadmedia@gmail.com`;
+- support contact: `afradadmedia@gmail.com`;
+- target audience: `18 and over`;
+- children included in target audience: `NO`.
+
+The earlier child-inclusive/Families-specific hold is superseded by this explicit later decision. The Privacy Policy now states that the app is intended for adults aged 18 and over and is not designed or directed to children.
+
+Still intentionally unresolved:
 - final effective date;
-- final children/target-audience wording.
-
-The children/target-audience section remains visibly marked `Publication review required`.
+- final release-artifact / merged-manifest reconciliation;
+- final Play Data Safety reconciliation;
+- final production AdMob binding/runtime reconciliation.
 
 ## Responsive / accessibility controls
 
@@ -225,8 +231,8 @@ Privacy:
 - local stylesheet: `../assets/site.css`
 - skip link: PASS
 - internal anchor integrity: PASS
-- privacy/support placeholders retained: PASS
-- target-audience publication blocker retained: PASS
+- publisher/privacy/support identity bound: PASS
+- target audience 18+ / children NO bound: PASS
 - Save path truth: PASS
 - local-processing vs AdMob boundary: PASS
 
@@ -242,16 +248,12 @@ CSS:
 
 `HOLD`:
 
-1. publisher/legal identity;
-2. privacy email;
-3. support email;
-4. final effective date;
-5. final Google Play target-audience / children declaration;
-6. exact merged release-manifest reconciliation;
-7. final Play Data Safety reconciliation;
-8. final production AdMob binding/runtime reconciliation;
-9. final human visual review at representative desktop/mobile viewport sizes;
-10. explicit deployment/publication approval.
+1. final effective date;
+2. exact merged release-manifest reconciliation;
+3. final Play Data Safety reconciliation;
+4. final production AdMob binding/runtime reconciliation;
+5. final human visual review at representative desktop/mobile viewport sizes;
+6. explicit deployment/publication approval.
 
 ## Claim ceiling
 
