@@ -4,23 +4,41 @@ Date: 2026-10-04
 Project: Apps AfradadMedia
 Product: Photo Compressor: KB Limit
 
-## Supplied by publisher
+## Confirmed publisher inputs
 
 - Publisher/legal identity: Afradad Media
 - Privacy contact: afradadmedia@gmail.com
 - Support contact: afradadmedia@gmail.com
-- Children included in target audience: YES
+- Google Play target audience decision: 18 and over
+- Children included in target audience: NO
 
-## Still required
+## Decision clarification
 
-The exact Google Play target-age group selections were not supplied. The placeholder in the response is not treated as a valid declaration.
+The app is a general-purpose photo utility, but "technically usable by anyone" is not treated as the same thing as "designed for every age group."
 
-Current gate:
+The canonical project decision is:
 
-PRIVACY_IDENTITY_CONTACT_PASS / TARGET_AGE_GROUPS_HOLD
+`TARGET_AUDIENCE = 18_AND_OVER`
 
-The Privacy Policy candidate has been updated with the confirmed identity and contact details. Its children/target-audience section remains publication-blocked until the exact Play selections are provided and release compliance is reconciled.
+`CHILDREN_INCLUDED = NO`
 
-Effective date also remains pending until publication timing is known.
+This closes the earlier child-inclusive/Families-specific hold that was created from the temporary "YES" response.
 
-No deployment, merge, Artifact Freeze, or publication is authorized by this record.
+## Current gate
+
+`PRIVACY_IDENTITY_CONTACT_TARGET_AUDIENCE_PASS`
+
+Still pending before publication:
+
+- final effective date;
+- exact release-artifact / merged-manifest reconciliation;
+- final Play Data Safety reconciliation;
+- final production AdMob binding/runtime reconciliation;
+- final rendered human visual review;
+- explicit deployment/publication approval.
+
+## Provider boundary
+
+This record is the project/source-of-truth decision. It does not claim that the Google Play Console field has already been changed.
+
+No Play Console mutation, deployment, merge, Artifact Freeze, or publication is authorized by this record.
