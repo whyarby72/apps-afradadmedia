@@ -1,4 +1,4 @@
-# Privacy Publication Inputs — Human Decision Required
+# Privacy Publication Inputs — Human Decision Record
 
 Date: 2026-10-04  
 Project: Apps AfradadMedia  
@@ -7,97 +7,88 @@ Branch: `feature/photo-compressor-web-candidate`
 
 ## Status
 
-`BLOCKED_ON_HUMAN_IDENTITY_AND_AUDIENCE_INPUTS`
+`IDENTITY_AND_CONTACT_PASS / TARGET_AGE_GROUPS_STILL_REQUIRED`
 
-The landing page can continue as a product candidate, but the Privacy Policy cannot be finalized for publication until the following four items are supplied or explicitly decided by the publisher/account holder.
+The publisher/account holder supplied the following values:
 
-## Required inputs
+- Publisher/legal identity: `Afradad Media`
+- Privacy contact: `afradadmedia@gmail.com`
+- Support contact: `afradadmedia@gmail.com`
+- Children included in target audience: `YES`
 
-### 1. Publisher / legal identity
+The exact Google Play target-age groups were not supplied. The placeholder text in that field is not treated as a declaration.
 
-Current supported public brand:
+## Closed inputs
+
+### Publisher / legal identity
+
 `Afradad Media`
 
-Final publisher/legal identity:
-`UNKNOWN — HUMAN INPUT REQUIRED`
+Source:
+direct human publisher/account-holder input in the current project conversation.
 
-Do not infer a legal entity name from:
-- brand name;
-- repository owner;
-- local filesystem names;
-- domain registrant guesses;
-- developer account display names.
+### Privacy contact
 
-### 2. Privacy contact email
+`afradadmedia@gmail.com`
 
-Current value:
-`UNKNOWN — HUMAN INPUT REQUIRED`
+### Support contact
 
-Requirement:
-- must be a real monitored mailbox;
-- must be suitable for privacy inquiries;
-- may be the same mailbox as support if the publisher explicitly chooses that arrangement.
+`afradadmedia@gmail.com`
 
-Do not invent `privacy@afradadmedia.com` or any other address unless the mailbox is confirmed to exist.
+The publisher explicitly selected the same monitored mailbox for Privacy and Support.
 
-### 3. Support contact email
+## Remaining material input
 
-Current value:
-`UNKNOWN — HUMAN INPUT REQUIRED`
+### Google Play target-age groups
 
-Requirement:
-- must be a real monitored mailbox;
-- should be appropriate for app-support questions;
-- may match the privacy contact only if explicitly chosen.
+Status:
 
-### 4. Google Play target audience / children declaration
+`UNKNOWN — HUMAN MUST PROVIDE EXACT PLAY SELECTIONS`
 
-Current project source truth:
-`UNKNOWN_PENDING_TRUTHFUL_PLAY_DECLARATION`
+Children are explicitly included in the intended audience, but the exact Play Console age selections remain required.
 
-Human must provide the exact intended/final Play target-audience state.
+Do not infer or auto-select age groups from:
+- the utility category;
+- app simplicity;
+- lack of child-specific imagery;
+- current content rating;
+- general availability to all users.
 
-Do not infer "not for children" merely because the product is a utility.
+## Children / Families policy consequence
 
-If children are included in the declared audience, Families/child-directed advertising constraints require a separate compliance re-audit before ad serving.
+Because the publisher states that children are included in the target audience:
 
-## Information already supported
+`FAMILIES_POLICY_REAUDIT_REQUIRED_BEFORE_AD_ENABLED_PUBLICATION`
 
-These do not require new human identity input:
+The current AdMob/UMP architecture must not be assumed production-compliant for a child-inclusive or mixed audience until the exact age selections are known and the corresponding Google Play / AdMob requirements are checked.
 
-- public brand: Afradad Media;
-- product: Photo Compressor: KB Limit;
-- package: `com.afradadmedia.reducephotosize`;
-- website architecture: `https://apps.afradadmedia.com/`;
-- candidate privacy URL: `https://apps.afradadmedia.com/photo-compressor-kb-limit/privacy/`;
-- core photo processing is local/on-device;
-- source photo is not uploaded to Afradad Media servers for compression;
-- no account/login required for the core workflow;
-- current architecture does not use Firebase Analytics, custom analytics, or mediation;
-- AdMob/UMP processing must be disclosed separately from photo processing.
+The current app architecture/evidence does not yet establish:
+- exact child age group(s);
+- whether the audience is child-only or mixed;
+- a neutral age screen for mixed audience use;
+- final child/unknown-age ad-treatment behavior;
+- final ad-SDK / Families eligibility for the exact release configuration.
 
-## Human response template
+## Privacy Policy update applied
 
-Fill exactly:
+The web Privacy Policy candidate now contains:
 
-```text
-Publisher/legal identity:
-Privacy contact email:
-Support contact email:
-Google Play target audience:
-Children included in target audience: YES / NO
-```
+- publisher/legal identity: Afradad Media;
+- privacy email: afradadmedia@gmail.com;
+- support email: afradadmedia@gmail.com;
+- children-included statement: YES;
+- explicit publication HOLD until exact Play age selections and Families/ad compliance are reconciled.
 
-If the same mailbox will be used for Privacy and Support, repeat the exact same address in both fields.
+## Effective date
+
+Still pending.
+
+Do not set the effective date until publication timing is known.
 
 ## Gate
 
-After the four inputs are supplied:
+Current disposition:
 
-1. replace Privacy Policy placeholders;
-2. replace the target-audience blocker with exact release-specific wording;
-3. set effective date only when publication timing is known;
-4. rerun copy/static QA;
-5. keep publication HOLD until final artifact/W2 reconciliation and explicit deployment/publication approval.
+`PRIVACY_IDENTITY_CONTACT_PASS / CHILD_AUDIENCE_COMPLIANCE_HOLD`
 
-No deployment, merge, Artifact Freeze, or publication is authorized by this intake record.
+No deployment, merge, Artifact Freeze, AdMob message publication, or website publication is authorized by this record.
