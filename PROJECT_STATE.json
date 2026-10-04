@@ -1,0 +1,32 @@
+{
+  "project": "Apps AfradadMedia",
+  "repository": "whyarby72/apps-afradadmedia",
+  "canonical_domain": "apps.afradadmedia.com",
+  "production_document_root_observed": "/home/afradadm/apps.afradadmedia.com/",
+  "source_of_truth": "GitHub",
+  "stage": "repository_foundation",
+  "branch": "bootstrap/web-foundation",
+  "verification": {
+    "target_profile": "V2_HOSTED_STATIC",
+    "repository_checks": "PENDING",
+    "hosted_environment_checks": "HOLD",
+    "artifact_bound_evidence": "PENDING"
+  },
+  "deployment": {
+    "configured": false,
+    "cpanel_environment_audited": false,
+    "cpanel_yml_present": false,
+    "production_deploy_authorized": false
+  },
+  "governance": {
+    "artifact_freeze": false,
+    "publication_authorized": false
+  },
+  "known_unknowns": [
+    "cPanel Git Version Control clone/deploy configuration",
+    "production deployment executable paths",
+    "live .htaccess override behavior",
+    "canonical app-ads.txt publisher entry",
+    "product-specific privacy and data-flow truth"
+  ]
+}
