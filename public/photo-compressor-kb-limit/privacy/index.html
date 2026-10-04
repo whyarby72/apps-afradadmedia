@@ -4,12 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#fbfaf6">
   <meta name="description" content="Privacy Policy for Photo Compressor: KB Limit by Afradad Media.">
   <link rel="canonical" href="https://apps.afradadmedia.com/photo-compressor-kb-limit/privacy/">
   <title>Privacy Policy — Photo Compressor: KB Limit</title>
   <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="../" aria-label="Back to Photo Compressor: KB Limit">
@@ -23,25 +26,21 @@
     </div>
   </header>
 
-  <main class="policy-wrap">
+  <main class="policy-wrap" id="main">
     <header class="policy-header">
-      <div class="eyebrow">Privacy Policy</div>
-      <h1>Privacy, explained around the actual app flow.</h1>
-      <p class="policy-meta">App: <strong>Photo Compressor: KB Limit</strong> · Android package <span class="codeish">com.afradadmedia.reducephotosize</span></p>
-
-      <div class="review-note">
-        <strong>Publication review required</strong>
-        This candidate is not yet publication-ready. Before it goes live, add the verified publisher legal identity, privacy contact email, final effective date and target-audience/children statement, then reconcile it against the exact ad-enabled release artifact, merged manifest and Play Data Safety answers.
-      </div>
+      <div class="eyebrow">Afradad Media</div>
+      <h1>Privacy Policy</h1>
+      <p class="policy-subtitle">Photo Compressor: KB Limit</p>
+      <p class="policy-meta">Android package <span class="codeish">com.afradadmedia.reducephotosize</span> · Effective date: <strong>pending publication review</strong></p>
 
       <div class="policy-summary">
         <div class="summary-item">
-          <strong>Photo compression</strong>
-          <span>Core JPEG processing happens on your device.</span>
+          <strong>Core photo processing</strong>
+          <span>JPEG compression happens on your device.</span>
         </div>
         <div class="summary-item">
-          <strong>Photo upload</strong>
-          <span>The app does not upload selected photos to Afradad Media servers for compression.</span>
+          <strong>Developer-server upload</strong>
+          <span>Your selected photo is not uploaded to Afradad Media servers for compression.</span>
         </div>
         <div class="summary-item">
           <strong>Account</strong>
@@ -49,41 +48,58 @@
         </div>
         <div class="summary-item">
           <strong>Advertising</strong>
-          <span>Ad-enabled releases may use Google Mobile Ads and Google's consent tools.</span>
+          <span>An ad-enabled release may use Google Mobile Ads and Google's consent services.</span>
         </div>
       </div>
+
+      <nav class="policy-toc" aria-label="Privacy Policy contents">
+        <strong>Contents</strong>
+        <div class="policy-toc-links">
+          <a href="#scope">Scope</a>
+          <a href="#photos">Photos</a>
+          <a href="#files">Files & sharing</a>
+          <a href="#metadata">Metadata</a>
+          <a href="#ads">Ads & consent</a>
+          <a href="#analytics">Analytics</a>
+          <a href="#permissions">System access</a>
+          <a href="#retention">Retention</a>
+          <a href="#choices">Your choices</a>
+          <a href="#children">Children</a>
+          <a href="#changes">Changes</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
     </header>
 
-    <section class="policy-section">
+    <section class="policy-section" id="scope">
       <h2>1. Scope</h2>
-      <p>This Privacy Policy describes how Photo Compressor: KB Limit handles information when you use the Android app. The app's core purpose is to help you reduce a JPEG/JPG toward a file-size limit that you provide, verify the resulting size, and save or share a copy.</p>
-      <p>This policy distinguishes the app's local photo-processing behavior from data that may be processed by Google advertising and consent services in an ad-enabled release.</p>
+      <p>This Privacy Policy describes how Photo Compressor: KB Limit handles information when you use the Android app. The app's core purpose is to help you reduce a JPEG/JPG toward a file-size limit you provide, verify the resulting size, and save or share a copy.</p>
+      <p>The policy separates the app's local photo-processing behavior from data that may be processed by Google advertising and consent services when those services are enabled in the release you are using.</p>
     </section>
 
-    <section class="policy-section">
+    <section class="policy-section" id="photos">
       <h2>2. Photos you choose</h2>
-      <p>When you choose a JPEG/JPG, the app may read information needed to perform the compression job, including the file's display name, MIME type, byte size, image dimensions and EXIF orientation when available.</p>
+      <p>When you choose a JPEG/JPG, the app may read information needed for the compression job, including the file's display name, MIME type, byte size, image dimensions and EXIF orientation when available.</p>
       <p>The selected photo is processed locally on your device for the core compression workflow. The app's core compression code does not upload the selected source JPEG to an Afradad Media server for compression.</p>
       <p>The app code is not designed to intentionally send your source JPEG bytes or the KB/MB target you enter to Google Mobile Ads.</p>
     </section>
 
-    <section class="policy-section">
-      <h2>3. Compression and result files</h2>
-      <p>JPEG recompression and resizing are performed on-device. For a known target, the app checks the actual result bytes against the limit you selected. If you use the unknown-limit path, the app may create a smaller copy but does not claim that the result will meet a specific website or form requirement.</p>
+    <section class="policy-section" id="files">
+      <h2>3. Temporary files, Save and Share</h2>
       <h3>Temporary result</h3>
-      <p>A generated result is temporarily stored in the app's cache so it can be previewed, saved or shared. The app reuses its result cache as new outputs are produced, and Android may clear app cache as part of normal system storage management.</p>
-      <h3>Saved copy</h3>
-      <p>Saving is an explicit action. When you choose Save, the app writes a separate JPEG copy to the device's media storage, under the Pictures area used by the app. Saved copies remain under your device/storage management until you delete or otherwise remove them.</p>
+      <p>A generated result is temporarily stored in the app's cache so it can be previewed, saved or shared. The result cache is reused as new outputs are produced, and Android may clear app cache as part of normal system storage management.</p>
+      <h3>Save</h3>
+      <p>Saving is an explicit action. When you choose Save, the app writes a separate JPEG copy to <span class="codeish">Pictures/Reduce Photo Size</span>. Saved copies remain under your device and storage management until you delete or otherwise remove them.</p>
       <h3>Share</h3>
       <p>Sharing is also an explicit action. The app provides the result through a read-only Android content URI to the app or service you choose. After you share a file, the receiving service's own privacy practices apply.</p>
       <h3>Original photo</h3>
       <p>The normal compression workflow does not overwrite the source photo.</p>
     </section>
 
-    <section class="policy-section">
+    <section class="policy-section" id="metadata">
       <h2>4. Image metadata</h2>
-      <p>When the app recompresses an image, the new JPEG is produced from decoded image pixels. Metadata from the source is not preserved in the same way as the original file. The app also uses EXIF orientation information, when available, to avoid silent orientation errors during processing.</p>
-      <p>If a source image already meets the requested limit and does not need recompression, the app may copy that source instead. For that reason, metadata behavior can differ between a recompressed result and a copied already-ready result.</p>
+      <p>When the app recompresses an image, the new JPEG is produced from decoded image pixels, so source metadata is not preserved in the same way as the original file. The app uses EXIF orientation information, when available, to avoid silent orientation errors during processing.</p>
+      <p>If a source image already meets the requested limit and does not need recompression, the app may copy that source instead. Metadata behavior can therefore differ between a recompressed result and an already-ready copied result.</p>
     </section>
 
     <section class="policy-section">
@@ -91,62 +107,65 @@
       <p>No user account or login is required for the core compression workflow. Afradad Media does not require a developer-owned cloud photo store or backend server to perform the core compression job.</p>
     </section>
 
-    <section class="policy-section">
+    <section class="policy-section" id="ads">
       <h2>6. Advertising and Google consent services</h2>
-      <p>An ad-enabled release of the app may use the Google Mobile Ads SDK (AdMob) to display advertising and Google's User Messaging Platform (UMP) to request or manage consent choices where required.</p>
-      <p>Google advertising and consent services can process data that is separate from the JPEG content handled by the local compression workflow. Depending on Google's current SDK behavior, configuration, consent state and applicable law, this can include device, network, advertising, interaction, diagnostic or fraud-prevention related information.</p>
+      <p>When advertising is enabled in the app release you are using, the app may use the Google Mobile Ads SDK (AdMob) to display a banner advertisement and Google's User Messaging Platform (UMP) to request or manage consent choices where required.</p>
+      <p>Google advertising and consent services can process information that is separate from the JPEG content handled by the local compression workflow. The exact categories and purposes depend on Google's current SDK behavior, configuration, consent state and applicable requirements and must be reconciled against the release artifact and Google's current documentation before publication.</p>
       <p>The current product architecture does not use Firebase Analytics, custom analytics or ad mediation. The current test architecture also disables Google's publisher first-party ID feature before ads become eligible.</p>
       <p>Advertising or consent failures are not intended to block the core photo-compression workflow.</p>
     </section>
 
     <section class="policy-section">
       <h2>7. Consent and privacy choices</h2>
-      <p>The app's current monetization/privacy architecture uses Google's UMP consent information as a gate before ad requests are permitted. Where Google reports that privacy options are required, the app is designed to expose a Privacy choices entry point.</p>
-      <p>The exact consent experience can vary by region, applicable rules, Google configuration and the release artifact in use.</p>
+      <p>The current monetization/privacy architecture uses Google's UMP consent information as a gate before ad requests are permitted. Where Google reports that privacy options are required, the app is designed to expose a Privacy choices entry point.</p>
+      <p>The exact consent experience can vary by region, applicable requirements, Google configuration and the release artifact in use.</p>
     </section>
 
-    <section class="policy-section">
+    <section class="policy-section" id="analytics">
       <h2>8. Analytics</h2>
       <p>The current product candidate does not use Firebase Analytics or a custom analytics service. If this changes in a later release, this policy and the relevant store disclosures must be updated before that behavior is represented as current.</p>
     </section>
 
-    <section class="policy-section">
+    <section class="policy-section" id="permissions">
       <h2>9. Permissions and system access</h2>
-      <p>The app uses Android system photo/document and media APIs to let you choose, save and share files. The final permissions and SDK-contributed manifest entries for an ad-enabled release must be determined from the merged manifest of that exact release artifact.</p>
-      <p>This policy therefore does not make a fixed, exhaustive permissions claim based only on the app's handwritten AndroidManifest.xml.</p>
+      <p>The app uses Android system photo/document and media APIs to let you choose, save and share files.</p>
+      <p>The final permissions and SDK-contributed manifest entries for an ad-enabled release must be determined from the merged manifest of that exact release artifact. This candidate therefore does not make an exhaustive permissions claim based only on the app's handwritten Android manifest.</p>
+    </section>
+
+    <section class="policy-section" id="retention">
+      <h2>10. Retention and deletion</h2>
+      <p>A temporary compressed result is kept in app cache for the app's result workflow and may be replaced by later results or cleared by Android as part of normal cache management.</p>
+      <p>Copies you explicitly save remain in your device media storage until you delete or remove them. Files you explicitly share are then handled by the destination app or service you selected.</p>
+      <p>The core compression workflow does not create a developer-owned server copy of your selected photo for processing.</p>
     </section>
 
     <section class="policy-section">
-      <h2>10. Security</h2>
-      <p>The core compression job is designed to operate locally on the device, reducing the need to transmit your selected photo to an Afradad Media server for processing. No method of software operation or data transmission can be described as perfectly secure, and third-party services used by an ad-enabled release are governed by their own security practices.</p>
+      <h2>11. Security</h2>
+      <p>The core compression job is designed to operate locally on the device, reducing the need to transmit your selected photo to an Afradad Media server for processing. No software or transmission method can be described as perfectly secure, and third-party services used by an ad-enabled release are governed by their own security practices.</p>
     </section>
 
-    <section class="policy-section">
-      <h2>11. Children's privacy and target audience</h2>
-      <p><strong>Publication blocker:</strong> the final target-audience and children declaration has not yet been bound in the current handoff. This section must be replaced with wording that matches the final Google Play target-audience declaration before publication.</p>
+    <section class="policy-section" id="choices">
+      <h2>12. Your choices</h2>
+      <p>You decide which JPEG/JPG to select, whether to save a compressed result, and whether and where to share it. Where Google requires or exposes privacy choices through UMP, the app is designed to make the applicable privacy-options entry point available.</p>
     </section>
 
-    <section class="policy-section">
-      <h2>12. International use</h2>
-      <p>Google advertising and consent services may process information across locations in accordance with Google's own terms, privacy practices and applicable legal requirements. The final release should be checked against the regions in which it is distributed and the consent configuration actually enabled.</p>
+    <section class="policy-section" id="children">
+      <h2>13. Children's privacy and target audience</h2>
+      <p class="review-inline"><strong>Publication review required:</strong> the final Google Play target-audience and children declaration is not yet bound in the supplied product handoff. This paragraph must be replaced with release-specific wording before this page is published as final.</p>
     </section>
 
-    <section class="policy-section">
-      <h2>13. Changes to this policy</h2>
+    <section class="policy-section" id="changes">
+      <h2>14. Changes to this policy</h2>
       <p>This policy may be updated when the app's features, advertising configuration, SDKs, legal requirements or data practices change. Material changes should be reflected on this page with an updated effective date.</p>
     </section>
 
     <section class="policy-section" id="contact">
-      <h2>14. Contact</h2>
+      <h2>15. Contact</h2>
       <p><strong>Developer brand:</strong> Afradad Media</p>
       <p><strong>Publisher legal identity:</strong> <span class="codeish">TO BE VERIFIED BEFORE PUBLICATION</span></p>
       <p><strong>Privacy contact:</strong> <span class="codeish">TO BE ADDED BEFORE PUBLICATION</span></p>
+      <p><strong>Support contact:</strong> <span class="codeish">TO BE ADDED BEFORE PUBLICATION</span></p>
       <p><strong>Website:</strong> <a href="https://apps.afradadmedia.com/">https://apps.afradadmedia.com/</a></p>
-    </section>
-
-    <section class="policy-section">
-      <h2>Release reconciliation required</h2>
-      <p>Before this policy is published as final, it must be rechecked against the exact release artifact, including the final package/version, merged manifest, resolved Google Mobile Ads and UMP versions, production AdMob binding, enabled ad formats, consent configuration, target audience, Play Ads declaration and Google Play Data Safety answers.</p>
     </section>
   </main>
 
