@@ -31,7 +31,7 @@
       <div class="eyebrow">Afradad Media</div>
       <h1>Privacy Policy</h1>
       <p class="policy-subtitle">Photo Compressor: KB Limit</p>
-      <p class="policy-meta">Android package <span class="codeish">com.afradadmedia.reducephotosize</span> · Last updated: <strong>October 4, 2026</strong></p>
+      <p class="policy-meta">Android package <span class="codeish">com.afradadmedia.reducephotosize</span> · Last updated: <strong>October 5, 2026</strong></p>
 
       <div class="policy-summary">
         <div class="summary-item">
@@ -48,7 +48,7 @@
         </div>
         <div class="summary-item">
           <strong>Advertising</strong>
-          <span>An ad-enabled release may use Google Mobile Ads and Google's consent services.</span>
+          <span>An ad-enabled release uses Google Mobile Ads (AdMob) for a banner ad and Google's User Messaging Platform (UMP) for consent and privacy choices where required.</span>
         </div>
       </div>
 
@@ -109,10 +109,18 @@
 
     <section class="policy-section" id="ads">
       <h2>6. Advertising and Google consent services</h2>
-      <p>When advertising is enabled in the app release you are using, the app may use the Google Mobile Ads SDK (AdMob) to display a banner advertisement and Google's User Messaging Platform (UMP) to request or manage consent choices where required.</p>
-      <p>Google advertising and consent services may process device, network, advertising, interaction, diagnostic, or fraud-prevention related information according to Google's current SDK behavior, configuration, consent state, and policies.</p>
-      <p>This third-party processing is separate from the JPEG content handled by the app's local compression workflow. The app code does not intentionally send your selected JPEG bytes or the KB/MB target you enter to Google Mobile Ads.</p>
-      <p>The app does not use Firebase Analytics, custom analytics, or ad mediation. Advertising or consent failures are not intended to block the core photo-compression workflow.</p>
+      <p>When you use an ad-enabled release of Photo Compressor: KB Limit, the app uses Google Mobile Ads (AdMob) to display a banner advertisement and Google's User Messaging Platform (UMP) to request or manage consent and privacy choices where required.</p>
+      <p>According to Google's current GMA Next-Gen SDK disclosures, Google Mobile Ads automatically collects and shares certain data for advertising, analytics, and fraud-prevention purposes. This can include:</p>
+      <ul>
+        <li>your device's IP address, which may be used to estimate general or approximate location;</li>
+        <li>user product interactions, such as app launches, taps, and ad interaction information;</li>
+        <li>diagnostic and performance information about the app and SDK;</li>
+        <li>device and account identifiers, including the Android advertising ID, app set ID, and, where applicable, other identifiers related to signed-in accounts on the device.</li>
+      </ul>
+      <p>Google states that data collected by the GMA Next-Gen SDK is encrypted in transit using Transport Layer Security (TLS).</p>
+      <p>This third-party processing is separate from the JPEG content handled by the app's local compression workflow. The app code does not intentionally send your selected JPEG bytes, generated result image bytes, filenames, the KB/MB target you enter, or your selected Share destination to Google Mobile Ads.</p>
+      <p>The app does not use Firebase Analytics, custom analytics, or advertising mediation in the current release. Advertising or consent-service failures are not intended to block the core photo-compression workflow.</p>
+      <p>Google's processing and retention of advertising and consent data are governed by Google's own privacy and retention practices.</p>
     </section>
 
     <section class="policy-section">
@@ -137,11 +145,15 @@
       <p>A temporary compressed result is kept in app cache for the app's result workflow and may be replaced by later results or cleared by Android as part of normal cache management.</p>
       <p>Copies you explicitly save remain in your device media storage until you delete or remove them. Files you explicitly share are then handled by the destination app or service you selected.</p>
       <p>The core compression workflow does not create a developer-owned server copy of your selected photo for processing.</p>
+      <h3>Third-party advertising and consent data</h3>
+      <p>Afradad Media does not operate a developer-owned server database for Google Mobile Ads or UMP data. Information processed by Google for advertising, analytics, fraud prevention, or consent services is handled and retained under Google's own privacy and retention practices. Afradad Media does not control Google's independent retention or deletion schedules.</p>
     </section>
 
     <section class="policy-section">
       <h2>11. Security</h2>
-      <p>The core compression job is designed to operate locally on the device, reducing the need to transmit your selected photo to an Afradad Media server for processing. No software or transmission method can be described as perfectly secure, and third-party services used by an ad-enabled release are governed by their own security practices.</p>
+      <p>The core photo-compression job is designed to operate locally on your device, reducing the need to transmit your selected photo to an Afradad Media server for processing.</p>
+      <p>Google states that data collected by the GMA Next-Gen SDK is encrypted in transit using Transport Layer Security (TLS). Third-party services used by an ad-enabled release are also governed by their own security practices.</p>
+      <p>No software, device, network, or transmission method can be guaranteed to be perfectly secure.</p>
     </section>
 
     <section class="policy-section" id="choices">
